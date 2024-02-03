@@ -37,3 +37,11 @@ window.addEventListener("scroll", function () {
         // signUp.classList.remove("scrolled-button");
     }
 });
+
+function scrollToElement(id) {
+    var element = document.getElementById(id);
+
+    if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+    }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Computer Components Order Form</title>
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            rel="stylesheet" />
+
+        <style>
+            body {
+                background-color: #f8f9fa;
+                padding: 20px;
+            }
+
+            .order-form {
+                max-width: 600px;
+                margin: auto;
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .submit-btn {
+                background-color: #007bff;
+                color: #ffffff;
+                cursor: pointer;
+            }
+
+            .submit-btn:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="order-form">
+            <h2 class="mb-4">Computer Components Order Form</h2>
+
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="componentType">Select Component Type:</label>
+                    <select class="form-control" id="componentType" required>
+                        <option value="" disabled selected>Select...</option>
+                        <option value="cpu">CPU</option>
+                        <option value="gpu">GPU</option>
+                        <option value="ram">RAM</option>
+                        <option value="storage">Storage</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="quantity"
+                        placeholder="Enter quantity"
+                        required />
+                </div>
+
+                <div class="form-group">
+                    <label for="shippingMethod">Select Shipping Method:</label>
+                    <select class="form-control" id="shippingMethod" required>
+                        <option value="" disabled selected>Select...</option>
+                        <option value="standard">Standard Shipping</option>
+                        <option value="express">Express Shipping</option>
+                    </select>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-primary submit-btn"
+                    onclick="submitOrder()">
+                    Submit Order
+                </button>
+            </form>
+
+            <div id="orderResult" class="mt-4"></div>
+        </div>
+
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            function submitOrder() {
+                // Get form values
+                const componentType =
+                    document.getElementById("componentType").value;
+                const quantity = document.getElementById("quantity").value;
+                const shippingMethod =
+                    document.getElementById("shippingMethod").value;
+
+                // Perform some validation if needed
+
+                // Display order result
+                const orderResultDiv = document.getElementById("orderResult");
+                orderResultDiv.innerHTML = `
+                <h4>Your Order:</h4>
+                <p><strong>Component Type:</strong> ${componentType}</p>
+                <p><strong>Quantity:</strong> ${quantity}</p>
+                <p><strong>Shipping Method:</strong> ${shippingMethod}</p>
+                <p class="text-success">Order successfully submitted!</p>
+            `;
+            }
+        </script>
+    </body>
+</html>
