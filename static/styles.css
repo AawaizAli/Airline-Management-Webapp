@@ -5,6 +5,7 @@ p,
 ul {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 *,
@@ -24,9 +25,6 @@ ul {
     top: -80px;
     bottom: -100px;
     padding-top: 0.5rem;
-    border: 5px rgb(255, 255, 255) solid;
-    border-bottom: 0;
-    border-top: 7px rgb(255, 255, 255) solid;
 }
 
 .background {
@@ -38,7 +36,7 @@ ul {
     height: 98vh;
     width: 100vw;
     z-index: -1;
-    background-image: url(".gitignore/new.png");
+    background-image: url("new.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -387,6 +385,10 @@ footer {
     margin-bottom: 10px;
 }
 
+.copyright {
+    margin-top: 10px;
+}
+
 /* STANDARD WIDTHS */
 
 @media screen and (max-width: 1200px) {
@@ -400,7 +402,7 @@ footer {
 @media screen and (max-width: 768px) {
     /* Adjust styles for small screens */
     .second {
-        height: 170vh;
+        height: 130vh !important;
     }
     .main-container {
         width: 70%;
@@ -413,6 +415,18 @@ footer {
     .content-box {
         /* flex: 0 0 90%; */
         margin: 9px 0;
+    }
+
+    .logo {
+        margin-left: 18px;
+    }
+
+    .flex {
+        margin-top: 30px;
+    }
+
+    .flex button {
+        margin-top: 10px;
     }
 
     .nav-links {
@@ -443,10 +457,45 @@ footer {
 
     .burger-menu {
         display: block;
+        margin-right: 15px;
     }
-
     .center-text {
         font-size: 2rem;
+    }
+
+    .form-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .fourth form {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .third form {
+        margin: 20px auto !important;
+    }
+
+    .fourth {
+        flex-direction: column !important;
+        height: 70vh;
+    }
+
+    .third {
+        flex-direction: column !important;
+    }
+
+    .heading-container {
+        text-align: center;
+    }
+
+    .heading-container h2 {
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
     }
 }
 
@@ -488,11 +537,35 @@ footer {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .flex {
         top: 430px;
     }
     .center-text {
         font-size: 1.6rem;
+    }
+
+    .second {
+        height: 160vh !important;
+    }
+
+    .fourth {
+        height: 55vh !important;
+    }
+
+    .third {
+        height: 80vh;
+    }
+
+    .third form {
+        margin: 20px auto !important;
+    }
+
+    .third h2 {
+        font-size: 40px !important;
+    }
+
+    .fourth form {
+        width: 100% !important;
     }
 }
